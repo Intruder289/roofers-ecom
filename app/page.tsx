@@ -1,8 +1,10 @@
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/sections/footer";
 import FeaturedProducts from "@/components/sections/featuredProducts";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import FAQ from "@/components/sections/faq";
 
 export default function Home() {
 
@@ -23,8 +25,8 @@ export default function Home() {
               Top brands under one roof
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90 dark:text-gray-400">
-              Handcrafted luxury roofing that celebrates life's precious
-              moments.
+              Top supplier of top quality roofing materials in Tanzania known
+              for quality and durability in the roofing industry
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/shop">
@@ -51,6 +53,8 @@ export default function Home() {
         </div>
       </section>
       <FeaturedProducts/>
+      <FAQ/>
+      <Footer/>
     </div>
   );
 }

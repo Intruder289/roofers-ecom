@@ -68,7 +68,7 @@ const Navbar = () => {
               <Button variant="ghost" size="icon" className="relative hover:bg-[#ffb703] hover:text-[#0a0a0a]">
                 <ShoppingCart className="h-5 w-5" />
                 {cartCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-accent text-accent-foreground text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
+                  <span className="absolute -top-1 -right-1 bg-[#ffb703] text-accent-foreground text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
                     {cartCount}
                   </span>
                 )}

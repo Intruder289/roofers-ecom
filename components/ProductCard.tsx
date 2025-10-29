@@ -1,9 +1,7 @@
 "use client";
 import Link from "next/link";
-import { ShoppingCart } from "lucide-react";
-import { Button } from "./ui/button";
+import Image from "next/image";
 
-import { useCart } from "@/contexts/CartContext";
 
 interface ProductCardProps {
   product: any;
@@ -19,44 +17,37 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
   return (
     <Link href={`/product/${product.id}`}>
-      <div className="group bg-card rounded-lg overflow-hidden shadow-sm hover-lift border border-border">
-        <div className="aspect-square overflow-hidden bg-muted">
-          <img
-            src={product.image}
-            alt={product.name}
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-            loading="lazy"
+      <div className="w-auto bg-white rounded-lg shadow-md overflow-hidden font-sans">
+        {/* Product Image Section */}
+        <div className="relative h-48">
+          <Image
+            src={product.image || '/placeholder.jpg'}
+            alt={product.name || 'Product image'}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
-        <div className="p-4 space-y-3">
-          <div>
-            <p className="text-xs text-muted-foreground uppercase tracking-wider">
-              {product.category}
-            </p>
-            <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors mt-1">
-              {product.name}
-            </h3>
-          </div>
-          <p className="text-sm text-muted-foreground line-clamp-2">
-            {product.description}
+
+        {/* Details Section */}
+        <div className="p-4">
+          {/* Price */}
+          <h2 className="text-sm font-bold text-green-600 mb-2">
+            TZS {product.price}
+          </h2>
+
+          {/* Title/Description */}
+          <p className="text-sm font-semibold text-gray-800 leading-tight mb-4 line-clamp-2">
+            {product.name}
           </p>
-          <div className="flex items-center justify-between pt-2">
-            <span className="text-xl font-bold text-foreground">
-              ${product.price.toFixed(2)}
+
+          {/* Brand New Tag Container (excluding address and logo) */}
+          <div className="flex justify-start pb-2">
+            {/* Brand New Tag */}
+            <span className="bg-gray-100 text-gray-700 text-sm font-medium px-3 py-1 rounded">
+              New arrival
             </span>
-            <Button
-              size="sm"
-              onClick={handleAddToCart}
-              disabled={!product.inStock}
-              className="gap-2"
-            >
-              <ShoppingCart className="h-4 w-4" />
-              Add
-            </Button>
           </div>
-          {!product.inStock && (
-            <p className="text-xs text-destructive font-medium">Out of Stock</p>
-          )}
         </div>
       </div>
     </Link>

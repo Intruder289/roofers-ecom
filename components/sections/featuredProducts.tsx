@@ -15,31 +15,31 @@ export default async function FeaturedProducts() {
   const featuredProducts = [
     {
       id: "1",
-      name: "Classic Roofing Tile",
-      price: 199.99,
+      name: "Classic Roofing Tile 2x 12mm thin peice of aluminium panel",
+      price: 12000.99,
       description: "Premium quality roofing tile with exceptional durability",
-      image: "https://picsum.photos/400/300?random=1",
+      image: "/images/product1.jpg",
     },
     {
       id: "2",
-      name: "Modern Slate Roof",
-      price: 299.99,
+      name: "Modern Slate Roof shinning thingie bla bla bla ",
+      price: 29900.99,
       description: "Contemporary slate roofing for modern homes",
-      image: "https://picsum.photos/400/300?random=2",
+      image: "/images/product2.jpg",
     },
     {
       id: "3",
       name: "Metal Roofing Sheet",
-      price: 159.99,
+      price: 15900.99,
       description: "Durable metal roofing for industrial applications",
-      image: "https://picsum.photos/400/300?random=3",
+      image: "/images/product3.jpg",
     },
     {
       id: "4",
       name: "Solar Roof Tiles",
-      price: 399.99,
+      price: 39980.99,
       description: "Energy-efficient solar roof tiles",
-      image: "https://picsum.photos/400/300?random=4",
+      image: "/images/product4.jpg",
     },
   ];
 
@@ -57,7 +57,7 @@ export default async function FeaturedProducts() {
               with meticulous attention to detail
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
             {Array.isArray(featuredProducts) &&
               featuredProducts.map((product, index) => (
                 <div
@@ -71,7 +71,7 @@ export default async function FeaturedProducts() {
           </div>
           <div className="text-center mt-12">
             <Link href="/shop">
-              <Button size="lg" className="gap-2">
+              <Button size="lg" className="gap-2 bg-[#023047] text-white cursor-pointer">
                 View All Products
                 <ArrowRight className="h-5 w-5" />
               </Button>
