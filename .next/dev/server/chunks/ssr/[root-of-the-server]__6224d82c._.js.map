@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Administrator/Documents/dev/roofers.co.tz/app/product/%5Bslug%5D/page.tsx"],"sourcesContent":["export default async function ProductDetails({params}:any) {\r\n    const {slug} = params;\r\n    console.log(slug);\r\n    \r\n\r\n  return (\r\n    <div>ProductDetails of **{slug}**</div>\r\n  )\r\n}\r\n\r\n"],"names":[],"mappings":";;;;;;AAAe,eAAe,eAAe,EAAC,MAAM,EAAK;IACrD,MAAM,EAAC,IAAI,EAAC,GAAG;IACf,QAAQ,GAAG,CAAC;IAGd,qBACE,8OAAC;;YAAI;YAAqB;YAAK;;;;;;;AAEnC","debugId":null}}]
+}

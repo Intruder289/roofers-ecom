@@ -1,36 +1,48 @@
 import { NextResponse } from 'next/server';
+import { prisma } from '@/lib/prisma'
 
-const mockProducts = [
-  {
-    id: '1',
-    name: 'Classic Roofing Tile',
-    price: 199.99,
-    description: 'Premium quality roofing tile with exceptional durability',
-    image: '/products/tile1.jpg'
-  },
-  {
-    id: '2',
-    name: 'Modern Slate Roof',
-    price: 299.99,
-    description: 'Contemporary slate roofing for modern homes',
-    image: '/products/tile2.jpg'
-  },
-  {
-    id: '3',
-    name: 'Metal Roofing Sheet',
-    price: 159.99,
-    description: 'Durable metal roofing for industrial applications',
-    image: '/products/tile3.jpg'
-  },
-  {
-    id: '4',
-    name: 'Solar Roof Tiles',
-    price: 399.99,
-    description: 'Energy-efficient solar roof tiles',
-    image: '/products/tile4.jpg'
-  },
-];
+export async function POST(req: Request) {
+  try {
+    const body = await req.json();
+    const { name, price, description, image, inStock, featured, category } = body;
+
+    if (!name || price === undefined || !description || !image) {
+      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+    }
+
+    const product = await prisma.product.create({
+      data:{
+        price,
+        name,
+        description,
+        image,
+        inStock,
+        featured,
+        category,
+      }
+    });
+
+    return NextResponse.json(product);
+  } catch (error) {
+    console.error('Error creating product:', error);
+    return NextResponse.json(
+      { error: 'Failed to create product' },
+      { status: 500 }
+    );
+  }
+}
 
 export async function GET() {
-  return NextResponse.json(mockProducts);
+  try {
+    const products = await prisma.product.findMany({ 
+      orderBy: { createdAt: "desc" } 
+    });
+    return NextResponse.json(products);
+  } catch (error) {
+    console.error('Error fetching products:', error);
+    return NextResponse.json(
+      { error: 'Failed to fetch products' },
+      { status: 500 }
+    );
+  }
 }

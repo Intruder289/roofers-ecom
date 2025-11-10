@@ -15,14 +15,15 @@ const ProductCard = ({ product }: ProductCardProps) => {
     // addToCart(product);
   };
 
+  const productImgUrl = `${product.image}`
   return (
     <Link href={`/product/${product.id}`}>
       <div className="w-auto bg-white rounded-lg shadow-md overflow-hidden font-sans">
         {/* Product Image Section */}
         <div className="relative h-48">
           <Image
-            src={product.image || '/placeholder.jpg'}
-            alt={product.name || 'Product image'}
+            src={productImgUrl || 'placeholder.jpg'}
+            alt={productImgUrl || 'Product image'}
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -45,7 +46,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           <div className="flex justify-start pb-2">
             {/* Brand New Tag */}
             <span className="bg-gray-100 text-gray-700 text-sm font-medium px-3 py-1 rounded">
-              New arrival
+              Best selling
             </span>
           </div>
         </div>

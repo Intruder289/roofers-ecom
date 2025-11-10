@@ -18,28 +18,28 @@ export default async function FeaturedProducts() {
       name: "Classic Roofing Tile 2x 12mm thin peice of aluminium panel",
       price: 12000.99,
       description: "Premium quality roofing tile with exceptional durability",
-      image: "/images/product1.jpg",
+      image: "product1.jpg",
     },
     {
       id: "2",
       name: "Modern Slate Roof shinning thingie bla bla bla ",
       price: 29900.99,
       description: "Contemporary slate roofing for modern homes",
-      image: "/images/product2.jpg",
+      image: "product2.jpg",
     },
     {
       id: "3",
       name: "Metal Roofing Sheet",
       price: 15900.99,
       description: "Durable metal roofing for industrial applications",
-      image: "/images/product3.jpg",
+      image: "product3.jpg",
     },
     {
       id: "4",
       name: "Solar Roof Tiles",
       price: 39980.99,
       description: "Energy-efficient solar roof tiles",
-      image: "/images/product4.jpg",
+      image: "product4.jpg",
     },
   ];
 

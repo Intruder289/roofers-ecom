@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Administrator/Documents/dev/roofers.co.tz/app/product/%5Bid%5D/page.tsx"],"sourcesContent":["interface PageProps {\r\n  params: {\r\n    id: string;\r\n  };\r\n}\r\n\r\nexport default async function ProductDetails({ params }: PageProps) {\r\n  const { id } =await  params;\r\n  console.log('Product ID:', id);\r\n\r\n  return (\r\n    <div className=\"container mx-auto px-4 py-8\">\r\n      <h1 className=\"text-2xl font-bold\">Product Details - {id}</h1>\r\n    </div>\r\n  )\r\n}\r\n\r\n"],"names":[],"mappings":";;;;;;AAMe,eAAe,eAAe,EAAE,MAAM,EAAa;IAChE,MAAM,EAAE,EAAE,EAAE,GAAE,MAAO;IACrB,QAAQ,GAAG,CAAC,eAAe;IAE3B,qBACE,8OAAC;QAAI,WAAU;kBACb,cAAA,8OAAC;YAAG,WAAU;;gBAAqB;gBAAmB;;;;;;;;;;;;AAG5D","debugId":null}}]
+}

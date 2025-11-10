@@ -1,6 +1,988 @@
-[00:00:31.262] Server  LOG      ✓ Ready in 20.6s
-[00:00:34.401] Server  LOG      ○ Compiling / ...
-[00:00:47.261] Server  LOG     fgsgj
-[00:00:48.699] Server  WARN     ⚠ The "images.domains" configuration is deprecated. Please use "images.remotePatterns" configuration instead.
-[00:00:49.069] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:49.736] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:02.755] Server  LOG      ✓ Ready in 1834ms
+[00:00:23.610] Server  LOG     prisma:query "\n      SELECT table_name \n      FROM information_schema.tables \n      WHERE table_schema = 'public' \n      AND table_name = 'product'\n    "
+[00:00:23.612] Server  LOG     Table info: [{...}]
+[00:00:23.623] Server  LOG     prisma:query "SELECT \"public\".\"product\".\"id\", \"public\".\"product\".\"name\", \"public\".\"product\".\"price\", \"public\".\"product\".\"description\", \"public\".\"product\".\"image\", \"public\".\"product\".\"inStock\", \"public\".\"product\".\"featured\", \"public\".\"product\".\"category\", \"public\".\"product\".\"createdAt\", \"public\".\"product\".\"updatedAt\" FROM \"public\".\"product\" WHERE 1=1 ORDER BY \"public\".\"product\".\"createdAt\" DESC OFFSET $1"
+[00:03:10.300] Server  LOG     prisma:query "SELECT 1"
+[00:03:10.301] Server  LOG     prisma:query "SELECT \"public\".\"product\".\"id\", \"public\".\"product\".\"name\", \"public\".\"product\".\"price\", \"public\".\"product\".\"description\", \"public\".\"product\".\"image\", \"public\".\"product\".\"inStock\", \"public\".\"product\".\"featured\", \"public\".\"product\".\"category\", \"public\".\"product\".\"createdAt\", \"public\".\"product\".\"updatedAt\" FROM \"public\".\"product\" WHERE 1=1 ORDER BY \"public\".\"product\".\"createdAt\" DESC OFFSET $1"
+[00:07:19.721] Server  LOG     prisma:query "SELECT \"public\".\"product\".\"id\", \"public\".\"product\".\"name\", \"public\".\"product\".\"price\", \"public\".\"product\".\"description\", \"public\".\"product\".\"image\", \"public\".\"product\".\"inStock\", \"public\".\"product\".\"featured\", \"public\".\"product\".\"category\", \"public\".\"product\".\"createdAt\", \"public\".\"product\".\"updatedAt\" FROM \"public\".\"product\" WHERE 1=1 ORDER BY \"public\".\"product\".\"createdAt\" DESC OFFSET $1"
+[00:08:13.936] Server  LOG     prisma:query "SELECT 1"
+[00:08:13.937] Server  LOG     prisma:query "SELECT \"public\".\"product\".\"id\", \"public\".\"product\".\"name\", \"public\".\"product\".\"price\", \"public\".\"product\".\"description\", \"public\".\"product\".\"image\", \"public\".\"product\".\"inStock\", \"public\".\"product\".\"featured\", \"public\".\"product\".\"category\", \"public\".\"product\".\"createdAt\", \"public\".\"product\".\"updatedAt\" FROM \"public\".\"product\" WHERE 1=1 ORDER BY \"public\".\"product\".\"createdAt\" DESC OFFSET $1"
+[00:16:18.687] Server  LOG      ○ Compiling / ...
+[00:16:20.968] Server  LOG     fgsgj
+[00:16:21.990] Server  WARN     ⚠ The "images.domains" configuration is deprecated. Please use "images.remotePatterns" configuration instead.
+[00:16:22.040] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:16:22.260] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:16:26.448] Server  LOG     fgsgj
+[00:16:27.027] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:16:27.159] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:17:03.646] Server  ERROR    ⨯ ./app/shop/page.tsx:3:10
+Ecmascript file had an error
+  1 | "use server";
+  2 | import { useState, useMemo } from "react";
+> 3 | import { useRouter, useSearchParams } from "next/navigation";
+    |          ^^^^^^^^^
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+  6 | import { Button } from "@/components/ui/button";
+
+You're importing a component that needs `useRouter`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+
+
+
+
+./app/shop/page.tsx:3:21
+Ecmascript file had an error
+  1 | "use server";
+  2 | import { useState, useMemo } from "react";
+> 3 | import { useRouter, useSearchParams } from "next/navigation";
+    |                     ^^^^^^^^^^^^^^^
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+  6 | import { Button } from "@/components/ui/button";
+
+You're importing a component that needs `useSearchParams`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+
+
+
+
+./app/shop/page.tsx:2:10
+Ecmascript file had an error
+  1 | "use server";
+> 2 | import { useState, useMemo } from "react";
+    |          ^^^^^^^^
+  3 | import { useRouter, useSearchParams } from "next/navigation";
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+
+
+
+[00:17:03.864] Browser ERROR   ./app/shop/page.tsx:3:10
+Ecmascript file had an error
+  1 | "use server";
+  2 | import { useState, useMemo } from "react";
+> 3 | import { useRouter, useSearchParams } from "next/navigation";
+    |          ^^^^^^^^^
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+  6 | import { Button } from "@/components/ui/button";
+
+You're importing a component that needs `useRouter`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[00:17:03.864] Browser ERROR   ./app/shop/page.tsx:3:21
+Ecmascript file had an error
+  1 | "use server";
+  2 | import { useState, useMemo } from "react";
+> 3 | import { useRouter, useSearchParams } from "next/navigation";
+    |                     ^^^^^^^^^^^^^^^
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+  6 | import { Button } from "@/components/ui/button";
+
+You're importing a component that needs `useSearchParams`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[00:17:03.864] Browser ERROR   ./app/shop/page.tsx:2:10
+Ecmascript file had an error
+  1 | "use server";
+> 2 | import { useState, useMemo } from "react";
+    |          ^^^^^^^^
+  3 | import { useRouter, useSearchParams } from "next/navigation";
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[00:17:05.200] Browser ERROR   ./app/shop/page.tsx:3:10
+Ecmascript file had an error
+  1 | "use server";
+  2 | import { useState, useMemo } from "react";
+> 3 | import { useRouter, useSearchParams } from "next/navigation";
+    |          ^^^^^^^^^
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+  6 | import { Button } from "@/components/ui/button";
+
+You're importing a component that needs `useRouter`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[00:17:05.200] Browser ERROR   ./app/shop/page.tsx:3:21
+Ecmascript file had an error
+  1 | "use server";
+  2 | import { useState, useMemo } from "react";
+> 3 | import { useRouter, useSearchParams } from "next/navigation";
+    |                     ^^^^^^^^^^^^^^^
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+  6 | import { Button } from "@/components/ui/button";
+
+You're importing a component that needs `useSearchParams`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[00:17:05.200] Browser ERROR   ./app/shop/page.tsx:2:10
+Ecmascript file had an error
+  1 | "use server";
+> 2 | import { useState, useMemo } from "react";
+    |          ^^^^^^^^
+  3 | import { useRouter, useSearchParams } from "next/navigation";
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[00:17:05.200] Browser ERROR   ./app/shop/page.tsx:3:10
+Ecmascript file had an error
+  1 | "use server";
+  2 | import { useState, useMemo } from "react";
+> 3 | import { useRouter, useSearchParams } from "next/navigation";
+    |          ^^^^^^^^^
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+  6 | import { Button } from "@/components/ui/button";
+
+You're importing a component that needs `useRouter`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[00:17:05.200] Browser ERROR   ./app/shop/page.tsx:3:21
+Ecmascript file had an error
+  1 | "use server";
+  2 | import { useState, useMemo } from "react";
+> 3 | import { useRouter, useSearchParams } from "next/navigation";
+    |                     ^^^^^^^^^^^^^^^
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+  6 | import { Button } from "@/components/ui/button";
+
+You're importing a component that needs `useSearchParams`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[00:17:05.200] Browser ERROR   ./app/shop/page.tsx:2:10
+Ecmascript file had an error
+  1 | "use server";
+> 2 | import { useState, useMemo } from "react";
+    |          ^^^^^^^^
+  3 | import { useRouter, useSearchParams } from "next/navigation";
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[00:17:06.236] Browser ERROR   ./app/shop/page.tsx:3:10
+Ecmascript file had an error
+  1 | "use server";
+  2 | import { useState, useMemo } from "react";
+> 3 | import { useRouter, useSearchParams } from "next/navigation";
+    |          ^^^^^^^^^
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+  6 | import { Button } from "@/components/ui/button";
+
+You're importing a component that needs `useRouter`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[00:17:06.236] Browser ERROR   ./app/shop/page.tsx:3:21
+Ecmascript file had an error
+  1 | "use server";
+  2 | import { useState, useMemo } from "react";
+> 3 | import { useRouter, useSearchParams } from "next/navigation";
+    |                     ^^^^^^^^^^^^^^^
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+  6 | import { Button } from "@/components/ui/button";
+
+You're importing a component that needs `useSearchParams`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[00:17:06.236] Browser ERROR   ./app/shop/page.tsx:2:10
+Ecmascript file had an error
+  1 | "use server";
+> 2 | import { useState, useMemo } from "react";
+    |          ^^^^^^^^
+  3 | import { useRouter, useSearchParams } from "next/navigation";
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[00:17:06.370] Server  ERROR    ⨯ ./app/shop/page.tsx:3:10
+Ecmascript file had an error
+  1 | "use server";
+  2 | import { useState, useMemo } from "react";
+> 3 | import { useRouter, useSearchParams } from "next/navigation";
+    |          ^^^^^^^^^
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+  6 | import { Button } from "@/components/ui/button";
+
+You're importing a component that needs `useRouter`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+
+
+
+
+./app/shop/page.tsx:3:21
+Ecmascript file had an error
+  1 | "use server";
+  2 | import { useState, useMemo } from "react";
+> 3 | import { useRouter, useSearchParams } from "next/navigation";
+    |                     ^^^^^^^^^^^^^^^
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+  6 | import { Button } from "@/components/ui/button";
+
+You're importing a component that needs `useSearchParams`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+
+
+
+
+./app/shop/page.tsx:2:10
+Ecmascript file had an error
+  1 | "use server";
+> 2 | import { useState, useMemo } from "react";
+    |          ^^^^^^^^
+  3 | import { useRouter, useSearchParams } from "next/navigation";
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+
+
+
+[00:17:06.735] Browser ERROR   uncaughtError: Error: ./app/shop/page.tsx:3:10
+Ecmascript file had an error
+  1 | "use server";
+  2 | import { useState, useMemo } from "react";
+> 3 | import { useRouter, useSearchParams } from "next/navigation";
+    |          ^^^^^^^^^
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+  6 | import { Button } from "@/components/ui/button";
+
+You're importing a component that needs `useRouter`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+
+
+
+[00:17:06.920] Browser ERROR   ./app/shop/page.tsx:3:10
+Ecmascript file had an error
+  1 | "use server";
+  2 | import { useState, useMemo } from "react";
+> 3 | import { useRouter, useSearchParams } from "next/navigation";
+    |          ^^^^^^^^^
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+  6 | import { Button } from "@/components/ui/button";
+
+You're importing a component that needs `useRouter`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[00:17:06.920] Browser ERROR   ./app/shop/page.tsx:3:21
+Ecmascript file had an error
+  1 | "use server";
+  2 | import { useState, useMemo } from "react";
+> 3 | import { useRouter, useSearchParams } from "next/navigation";
+    |                     ^^^^^^^^^^^^^^^
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+  6 | import { Button } from "@/components/ui/button";
+
+You're importing a component that needs `useSearchParams`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[00:17:06.920] Browser ERROR   ./app/shop/page.tsx:2:10
+Ecmascript file had an error
+  1 | "use server";
+> 2 | import { useState, useMemo } from "react";
+    |          ^^^^^^^^
+  3 | import { useRouter, useSearchParams } from "next/navigation";
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[00:17:06.920] Browser ERROR   ./app/shop/page.tsx:3:10
+Ecmascript file had an error
+  1 | "use server";
+  2 | import { useState, useMemo } from "react";
+> 3 | import { useRouter, useSearchParams } from "next/navigation";
+    |          ^^^^^^^^^
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+  6 | import { Button } from "@/components/ui/button";
+
+You're importing a component that needs `useRouter`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[00:17:06.920] Browser ERROR   ./app/shop/page.tsx:3:21
+Ecmascript file had an error
+  1 | "use server";
+  2 | import { useState, useMemo } from "react";
+> 3 | import { useRouter, useSearchParams } from "next/navigation";
+    |                     ^^^^^^^^^^^^^^^
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+  6 | import { Button } from "@/components/ui/button";
+
+You're importing a component that needs `useSearchParams`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[00:17:06.920] Browser ERROR   ./app/shop/page.tsx:2:10
+Ecmascript file had an error
+  1 | "use server";
+> 2 | import { useState, useMemo } from "react";
+    |          ^^^^^^^^
+  3 | import { useRouter, useSearchParams } from "next/navigation";
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[00:17:28.141] Browser ERROR   ./app/shop/page.tsx:3:1
+Ecmascript file had an error
+  1 | "use server";
+  2 | import { useState, useMemo } from "react";
+> 3 | import { useRouter, useSearchParams } from "next/router";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+  6 | import { Button } from "@/components/ui/button";
+
+You have a Server Component that imports next/router. Use next/navigation instead.
+Learn more: https://nextjs.org/docs/app/api-reference/functions/use-router
+[00:17:28.141] Browser ERROR   ./app/shop/page.tsx:2:10
+Ecmascript file had an error
+  1 | "use server";
+> 2 | import { useState, useMemo } from "react";
+    |          ^^^^^^^^
+  3 | import { useRouter, useSearchParams } from "next/router";
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[00:17:33.625] Browser ERROR   ./app/shop/page.tsx:3:10
+Ecmascript file had an error
+  1 | "use server";
+  2 | import { useState, useMemo } from "react";
+> 3 | import { useRouter, useSearchParams } from "next/navigation";
+    |          ^^^^^^^^^
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+  6 | import { Button } from "@/components/ui/button";
+
+You're importing a component that needs `useRouter`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[00:17:33.625] Browser ERROR   ./app/shop/page.tsx:3:21
+Ecmascript file had an error
+  1 | "use server";
+  2 | import { useState, useMemo } from "react";
+> 3 | import { useRouter, useSearchParams } from "next/navigation";
+    |                     ^^^^^^^^^^^^^^^
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+  6 | import { Button } from "@/components/ui/button";
+
+You're importing a component that needs `useSearchParams`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[00:17:33.625] Browser ERROR   ./app/shop/page.tsx:2:10
+Ecmascript file had an error
+  1 | "use server";
+> 2 | import { useState, useMemo } from "react";
+    |          ^^^^^^^^
+  3 | import { useRouter, useSearchParams } from "next/navigation";
+  4 | import { Search } from "lucide-react";
+  5 | import { Input } from "@/components/ui/input";
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[00:17:40.236] Server  LOG      ✓ Compiled in 355ms
+[00:17:41.499] Server  ERROR    ⨯ ReferenceError: getProducts is not defined
+[00:17:41.970] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:42.156] Browser ERROR   uncaughtError: ReferenceError: getProducts is not defined
+[00:17:44.134] Server  LOG      ✓ Compiled in 128ms
+[00:17:44.280] Browser ERROR   ./app/shop/page.tsx:23:3
+Parsing ecmascript source code failed
+  21 |   const products: Product[] = 
+  22 |
+> 23 |   const filteredProducts = useMemo(() => {
+     |   ^^^^^
+  24 |     let filtered = products;
+  25 |
+  26 |     // Filter by category
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/shop/page.tsx [Client Component Browser]
+    ./app/shop/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/shop/page.tsx [Client Component SSR]
+    ./app/shop/page.tsx [Server Component]
+[00:17:53.170] Server  LOG      ✓ Compiled in 187ms
+[00:17:53.223] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:17:54.249] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:54.382] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:17:57.229] Server  LOG      ✓ Compiled in 164ms
+[00:17:58.948] Server  LOG      ✓ Compiled in 146ms
+[00:18:30.050] Browser ERROR   ./components/sections/featuredProducts.tsx:17:3
+Parsing ecmascript source code failed
+  15 |   const featuredProducts = 
+  16 |
+> 17 |   return (
+     |   ^^^^^^
+  18 |     <div>
+  19 |       {/* Featured Products */}
+  20 |       <section className="py-16 md:py-24">
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/sections/featuredProducts.tsx
+    ./app/page.tsx
+[00:18:32.886] Server  LOG      ✓ Compiled in 211ms
+[00:18:36.088] Server  LOG      ✓ Compiled in 176ms
+[00:18:38.335] Server  LOG      ✓ Compiled in 163ms
+[00:18:43.855] Server  LOG     fgsgj
+[00:18:44.159] Server  ERROR    ⨯ TypeError: Failed to parse URL from api/product
+[00:18:44.328] Browser ERROR   uncaughtError: TypeError: Failed to parse URL from api/product
+[00:19:08.696] Browser ERROR   ./components/sections/featuredProducts.tsx:16:42
+Parsing ecmascript source code failed
+  14 | export default async function FeaturedProducts() {
+  15 |   async function getProducts() {
+> 16 |     const res = await fetch('api/product'http://192.168.100.63:3000/api/product
+     |                                          ^^^^
+  17 |       throw new Error('Failed to fetch products');
+  18 |     }
+  19 |     return res.json();
+
+Expected ',', got 'http'
+
+Import trace:
+  Server Component:
+    ./components/sections/featuredProducts.tsx
+    ./app/page.tsx
+[00:19:10.989] Server  LOG      ✓ Compiled in 170ms
+[00:19:11.499] Server  LOG     fgsgj
+[00:19:12.291] Server  LOG     prisma:query "SELECT \"public\".\"product\".\"id\", \"public\".\"product\".\"name\", \"public\".\"product\".\"price\", \"public\".\"product\".\"description\", \"public\".\"product\".\"image\", \"public\".\"product\".\"inStock\", \"public\".\"product\".\"featured\", \"public\".\"product\".\"category\", \"public\".\"product\".\"createdAt\", \"public\".\"product\".\"updatedAt\" FROM \"public\".\"product\" WHERE 1=1 ORDER BY \"public\".\"product\".\"createdAt\" DESC OFFSET $1"
+[00:19:12.481] Server  ERROR   TypeError: Invalid URL
+[00:19:12.514] Server  ERROR    ⨯ Error: Failed to parse src "image12.jpg" on `next/image`, if using relative image it must start with a leading slash "/" or be an absolute URL (http:// or https://)
+[00:19:12.911] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:13.064] Browser ERROR   {"message":"Failed to construct 'URL': Invalid URL"}
+[00:19:13.064] Browser ERROR   {"message":"Failed to construct 'URL': Invalid URL"}
+[00:19:13.064] Browser ERROR   uncaughtError: Error: Failed to parse src "image12.jpg" on `next/image`, if using relative image it must start with a leading slash "/" or be an absolute URL (http:// or https://)
+[00:22:53.420] Server  LOG      ✓ Compiled in 162ms
+[00:22:53.959] Server  LOG     fgsgj
+[00:22:54.711] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:54.870] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:35:50.230] Server  LOG     fgsgj
+[00:35:50.801] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:35:51.001] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:36:59.023] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:36:59.176] Browser WARN    Image with src "/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:36:59.176] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:37:04.641] Server  LOG     fgsgj
+[00:37:46.987] Server  LOG     fgsgj
+[00:37:47.571] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:37:47.703] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:37:49.873] Server  LOG     fgsgj
+[00:37:50.289] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:37:50.424] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:37:51.055] Server  LOG     fgsgj
+[00:37:51.366] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:37:51.529] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:37:52.222] Server  LOG     fgsgj
+[00:37:52.537] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:37:52.677] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:38:02.145] Server  LOG     Product ID: "1"
+[00:38:02.390] Browser LOG     {"product":{"category":"other","description":"Premium quality roofing tile with exceptional durability","featured":true,"id":"1","image":"/images/product1.jpg","inStock":true,"name":"Classic Roofing Tile 2x 12mm thin peice of aluminium panel","price":12000.99}}
+[00:38:02.390] Browser LOG     {"product":{"category":"other","description":"Premium quality roofing tile with exceptional durability","featured":true,"id":"1","image":"/images/product1.jpg","inStock":true,"name":"Classic Roofing Tile 2x 12mm thin peice of aluminium panel","price":12000.99}}
+[00:38:05.586] Server  LOG     Product ID: "1"
+[00:38:05.755] Browser LOG     {"product":{"category":"other","description":"Premium quality roofing tile with exceptional durability","featured":true,"id":"1","image":"/images/product1.jpg","inStock":true,"name":"Classic Roofing Tile 2x 12mm thin peice of aluminium panel","price":12000.99}}
+[00:38:05.755] Browser LOG     {"product":{"category":"other","description":"Premium quality roofing tile with exceptional durability","featured":true,"id":"1","image":"/images/product1.jpg","inStock":true,"name":"Classic Roofing Tile 2x 12mm thin peice of aluminium panel","price":12000.99}}
+[00:38:10.519] Server  LOG     Product ID: "4"
+[00:38:10.750] Browser LOG     {"product":{"description":"Energy-efficient solar roof tiles","id":"4","image":"/images/product4.jpg","name":"Solar Roof Tiles","price":39980.99}}
+[00:38:10.750] Browser LOG     {"product":{"description":"Energy-efficient solar roof tiles","id":"4","image":"/images/product4.jpg","name":"Solar Roof Tiles","price":39980.99}}
+[00:38:15.558] Browser LOG     {"product":{"description":"Energy-efficient solar roof tiles","id":"4","image":"/images/product4.jpg","name":"Solar Roof Tiles","price":39980.99}}
+[00:38:15.558] Browser LOG     {"product":{"description":"Energy-efficient solar roof tiles","id":"4","image":"/images/product4.jpg","name":"Solar Roof Tiles","price":39980.99}}
+[00:38:18.458] Server  LOG     Product ID: "4"
+[00:38:21.157] Server  LOG     Product ID: "4"
+[00:38:21.901] Server  LOG     Product ID: "4"
+[00:38:23.214] Server  LOG     Product ID: "4"
+[00:38:24.047] Server  LOG     Product ID: "4"
+[00:38:25.156] Server  LOG     Product ID: "4"
+[00:38:25.743] Server  LOG     Product ID: "4"
+[00:38:30.437] Server  LOG     Product ID: "4"
+[00:38:34.576] Server  LOG     Product ID: "4"
+[00:38:34.768] Browser LOG     {"product":{"description":"Energy-efficient solar roof tiles","id":"4","image":"/images/product4.jpg","name":"Solar Roof Tiles","price":39980.99}}
+[00:38:34.768] Browser LOG     {"product":{"description":"Energy-efficient solar roof tiles","id":"4","image":"/images/product4.jpg","name":"Solar Roof Tiles","price":39980.99}}
+[00:38:40.362] Server  LOG     fgsgj
+[00:59:46.579] Server  LOG     fgsgj
+[00:59:47.275] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:59:47.533] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <CartProvider>
+      <ThemeProvider>
+        <Navbar>
+          <nav className="sticky top...">
+            <div className="container ...">
+              <div className="flex items...">
+                <LinkComponent>
+                <div>
+                <div className="flex items...">
+                  <LinkComponent href="#">
+                    <a ref={function} onClick={function onClick} onMouseEnter={function onMouseEnter} ...>
+                      <_c variant="ghost" size="icon" className="relative h...">
+                        <button className={"inline-f..."} ref={null}>
+                          <MiniCart>
+                            <ShoppingCart>
++                           <span
++                             className="absolute -top-1 -right-1 bg-[#ffb703] text-accent-foreground text-xs w-5 h-5 ..."
++                           >
+                  ...
+        ...
+
+[00:59:47.533] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:00:18.828] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:00:18.981] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <CartProvider>
+      <ThemeProvider>
+        <Navbar>
+          <nav className="sticky top...">
+            <div className="container ...">
+              <div className="flex items...">
+                <LinkComponent>
+                <div>
+                <div className="flex items...">
+                  <LinkComponent href="#">
+                    <a ref={function} onClick={function onClick} onMouseEnter={function onMouseEnter} ...>
+                      <_c variant="ghost" size="icon" className="relative h...">
+                        <button className={"inline-f..."} ref={null}>
+                          <MiniCart>
+                            <ShoppingCart>
++                           <span
++                             className="absolute -top-1 -right-1 bg-[#ffb703] text-accent-foreground text-xs w-5 h-5 ..."
++                           >
+                  ...
+        ...
+
+[01:00:18.981] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:00:19.308] Server  LOG     fgsgj
+[01:00:20.630] Server  LOG     fgsgj
+[01:00:30.679] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:00:30.838] Browser WARN    Image with src "/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[01:00:30.838] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <CartProvider>
+      <ThemeProvider>
+        <Navbar>
+          <nav className="sticky top...">
+            <div className="container ...">
+              <div className="flex items...">
+                <LinkComponent>
+                <div>
+                <div className="flex items...">
+                  <LinkComponent href="#">
+                    <a ref={function} onClick={function onClick} onMouseEnter={function onMouseEnter} ...>
+                      <_c variant="ghost" size="icon" className="relative h...">
+                        <button className={"inline-f..."} ref={null}>
+                          <MiniCart>
+                            <ShoppingCart>
++                           <span
++                             className="absolute -top-1 -right-1 bg-[#ffb703] text-accent-foreground text-xs w-5 h-5 ..."
++                           >
+                  ...
+        ...
+
+[01:00:30.838] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:00:32.069] Server  LOG     fgsgj
+[01:00:32.488] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:00:32.669] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <CartProvider>
+      <ThemeProvider>
+        <Navbar>
+          <nav className="sticky top...">
+            <div className="container ...">
+              <div className="flex items...">
+                <LinkComponent>
+                <div>
+                <div className="flex items...">
+                  <LinkComponent href="#">
+                    <a ref={function} onClick={function onClick} onMouseEnter={function onMouseEnter} ...>
+                      <_c variant="ghost" size="icon" className="relative h...">
+                        <button className={"inline-f..."} ref={null}>
+                          <MiniCart>
+                            <ShoppingCart>
++                           <span
++                             className="absolute -top-1 -right-1 bg-[#ffb703] text-accent-foreground text-xs w-5 h-5 ..."
++                           >
+                  ...
+        ...
+
+[01:00:32.669] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:11:11.488] Server  LOG     fgsgj
+[01:11:11.978] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:11:12.271] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <CartProvider>
+      <ThemeProvider>
+        <Navbar>
+          <nav className="sticky top...">
+            <div className="container ...">
+              <div className="flex items...">
+                <LinkComponent>
+                <div>
+                <div className="flex items...">
+                  <LinkComponent href="#">
+                    <a ref={function} onClick={function onClick} onMouseEnter={function onMouseEnter} ...>
+                      <_c variant="ghost" size="icon" className="relative h...">
+                        <button className={"inline-f..."} ref={null}>
+                          <MiniCart>
+                            <ShoppingCart>
++                           <span
++                             className="absolute -top-1 -right-1 bg-[#ffb703] text-accent-foreground text-xs w-5 h-5 ..."
++                           >
+                  ...
+        ...
+
+[01:11:12.271] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:57:08.007] Server  LOG     fgsgj
+[01:57:08.735] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:57:09.006] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <CartProvider>
+      <ThemeProvider>
+        <Navbar>
+          <nav className="sticky top...">
+            <div className="container ...">
+              <div className="flex items...">
+                <LinkComponent>
+                <div>
+                <div className="flex items...">
+                  <LinkComponent href="#">
+                    <a ref={function} onClick={function onClick} onMouseEnter={function onMouseEnter} ...>
+                      <_c variant="ghost" size="icon" className="relative h...">
+                        <button className={"inline-f..."} ref={null}>
+                          <MiniCart>
+                            <ShoppingCart>
++                           <span
++                             className="absolute -top-1 -right-1 bg-[#ffb703] text-accent-foreground text-xs w-5 h-5 ..."
++                           >
+                  ...
+        ...
+
+[01:57:09.006] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:57:44.372] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:57:44.372] Browser WARN    Image with src "/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[01:57:44.492] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <CartProvider>
+      <ThemeProvider>
+        <Navbar>
+          <nav className="sticky top...">
+            <div className="container ...">
+              <div className="flex items...">
+                <LinkComponent>
+                <div>
+                <div className="flex items...">
+                  <LinkComponent href="#">
+                    <a ref={function} onClick={function onClick} onMouseEnter={function onMouseEnter} ...>
+                      <_c variant="ghost" size="icon" className="relative h...">
+                        <button className={"inline-f..."} ref={null}>
+                          <MiniCart>
+                            <ShoppingCart>
++                           <span
++                             className="absolute -top-1 -right-1 bg-[#ffb703] text-accent-foreground text-xs w-5 h-5 ..."
++                           >
+                  ...
+        ...
+
+[01:57:44.492] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:57:48.158] Server  LOG     fgsgj
+[01:57:48.818] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:57:48.983] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <CartProvider>
+      <ThemeProvider>
+        <Navbar>
+          <nav className="sticky top...">
+            <div className="container ...">
+              <div className="flex items...">
+                <LinkComponent>
+                <div>
+                <div className="flex items...">
+                  <LinkComponent href="#">
+                    <a ref={function} onClick={function onClick} onMouseEnter={function onMouseEnter} ...>
+                      <_c variant="ghost" size="icon" className="relative h...">
+                        <button className={"inline-f..."} ref={null}>
+                          <MiniCart>
+                            <ShoppingCart>
++                           <span
++                             className="absolute -top-1 -right-1 bg-[#ffb703] text-accent-foreground text-xs w-5 h-5 ..."
++                           >
+                  ...
+        ...
+
+[01:57:48.983] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[05:42:00.573] Server  LOG      ✓ Compiled in 274ms
+[05:42:03.678] Server  LOG      ✓ Compiled in 196ms
+[05:42:10.988] Server  LOG      ✓ Compiled in 162ms
+[05:42:14.670] Server  LOG      ✓ Compiled in 160ms
+[05:43:25.817] Server  LOG      ✓ Compiled in 188ms
+[05:44:18.290] Server  LOG      ✓ Compiled in 206ms
+[05:44:35.714] Server  LOG      ✓ Compiled in 174ms
+[05:44:56.746] Server  LOG      ✓ Compiled in 179ms
+[05:45:48.619] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images//images/product1.jpg" "received" null
+[05:45:48.621] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images//images/product2.jpg" "received" null
+[05:45:49.678] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images//images/product3.jpg" "received" null
+[05:45:49.703] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images//images/product4.jpg" "received" null
+[05:45:50.106] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:45:50.289] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images//images/product1.jpg" "received" null
+[05:45:50.296] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images//images/product2.jpg" "received" null
+[05:45:50.297] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images//images/product3.jpg" "received" null
+[05:45:50.300] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images//images/product4.jpg" "received" null
+[05:45:50.365] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <CartProvider>
+      <ThemeProvider>
+        <Navbar>
+          <nav className="sticky top...">
+            <div className="container ...">
+              <div className="flex items...">
+                <LinkComponent>
+                <div>
+                <div className="flex items...">
+                  <LinkComponent href="#">
+                    <a ref={function} onClick={function onClick} onMouseEnter={function onMouseEnter} ...>
+                      <_c variant="ghost" size="icon" className="relative h...">
+                        <button className={"inline-f..."} ref={null}>
+                          <MiniCart>
+                            <ShoppingCart>
++                           <span
++                             className="absolute -top-1 -right-1 bg-[#ffb703] text-accent-foreground text-xs w-5 h-5 ..."
++                           >
+                  ...
+        ...
+
+[05:45:50.365] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[05:45:52.757] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images//images/product1.jpg" "received" null
+[05:45:52.760] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images//images/product2.jpg" "received" null
+[05:45:52.898] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images//images/product3.jpg" "received" null
+[05:45:52.899] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images//images/product4.jpg" "received" null
+[05:45:52.940] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:45:53.018] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images//images/product1.jpg" "received" null
+[05:45:53.019] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images//images/product2.jpg" "received" null
+[05:45:53.020] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images//images/product3.jpg" "received" null
+[05:45:53.022] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images//images/product4.jpg" "received" null
+[05:45:53.079] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <CartProvider>
+      <ThemeProvider>
+        <Navbar>
+          <nav className="sticky top...">
+            <div className="container ...">
+              <div className="flex items...">
+                <LinkComponent>
+                <div>
+                <div className="flex items...">
+                  <LinkComponent href="#">
+                    <a ref={function} onClick={function onClick} onMouseEnter={function onMouseEnter} ...>
+                      <_c variant="ghost" size="icon" className="relative h...">
+                        <button className={"inline-f..."} ref={null}>
+                          <MiniCart>
+                            <ShoppingCart>
++                           <span
++                             className="absolute -top-1 -right-1 bg-[#ffb703] text-accent-foreground text-xs w-5 h-5 ..."
++                           >
+                  ...
+        ...
+
+[05:45:53.079] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[05:46:40.166] Server  LOG      ✓ Compiled in 200ms
+[05:46:40.345] Browser ERROR   uncaughtError: Error: Failed to parse src "//images/product1.jpg" on `next/image`, protocol-relative URL (//) must be changed to an absolute URL (http:// or https://)
+[05:46:47.265] Server  LOG      ✓ Compiled in 174ms
+[05:46:47.380] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[05:46:48.454] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:46:48.667] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <CartProvider>
+      <ThemeProvider>
+        <Navbar>
+          <nav className="sticky top...">
+            <div className="container ...">
+              <div className="flex items...">
+                <LinkComponent>
+                <div>
+                <div className="flex items...">
+                  <LinkComponent href="#">
+                    <a ref={function} onClick={function onClick} onMouseEnter={function onMouseEnter} ...>
+                      <_c variant="ghost" size="icon" className="relative h...">
+                        <button className={"inline-f..."} ref={null}>
+                          <MiniCart>
+                            <ShoppingCart>
++                           <span
++                             className="absolute -top-1 -right-1 bg-[#ffb703] text-accent-foreground text-xs w-5 h-5 ..."
++                           >
+                  ...
+        ...
+
+[05:46:48.667] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.

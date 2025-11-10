@@ -3,16 +3,21 @@ import  Link  from "next/link";
 import Image from "next/image"
 import { ShoppingCart, Menu, X, Moon, Sun, CircleUser, Circle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-// import { useCart } from "@/contexts/CartContext";
+import  MiniCart from "@/components/MiniCart"
 import { useTheme } from "@/contexts/ThemeContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useCart } from "@/contexts/CartContext";
 
 
 const Navbar = () => {
-//   const { getCartCount } = useCart();
   const { theme, toggleTheme } = useTheme();
+  const { getCartCount } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const cartCount = 3;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -22,7 +27,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm bg-white/60 shadow-sm">
+    <nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -50,28 +55,11 @@ const Navbar = () => {
 
           {/* Actions */}
           <div className="flex items-center space-x-4">
-            {/* <Button
-              variant="ghost"
-              size="icon"
-              className="hover:bg-[#ffb703] hover:text-[#0a0a0a]"
-              onClick={toggleTheme}
-              aria-label="Toggle theme"
-            >
-              {theme === "light" ? (
-                <Moon className="h-5 w-5" />
-              ) : (
-                <Sun className="h-5 w-5" />
-              )}
-            </Button> */}
 
-            <Link href="/cart">
+            {/* <Link href="/cart"> */}
+            <Link href="#">
               <Button variant="ghost" size="icon" className="relative hover:bg-[#ffb703] hover:text-[#0a0a0a]">
-                <ShoppingCart className="h-5 w-5" />
-                {cartCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-[#ffb703] text-accent-foreground text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
-                    {cartCount}
-                  </span>
-                )}
+                <MiniCart/>
               </Button>
             </Link>
 

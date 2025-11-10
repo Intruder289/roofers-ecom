@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+
 import Footer from "@/components/sections/footer";
 import FeaturedProducts from "@/components/sections/featuredProducts";
 import { Button } from "@/components/ui/button";
@@ -11,7 +11,7 @@ export default function Home() {
   console.log('fgsgj')
   return (
     <div>
-      <Navbar />
+      
       {/* Hero Section */}
       <section
         className="relative 
