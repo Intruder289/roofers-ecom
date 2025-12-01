@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { ShoppingCart } from "lucide-react";
 export default function CartButton(product: any) {
   const { addToCart } = useCart();
-  console.log(product);
 
   return (
      

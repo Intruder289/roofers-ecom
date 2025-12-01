@@ -24,7 +24,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className=" hover:text-primary transition-colors"
                 >
                   Home
                 </Link>
@@ -32,7 +32,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/shop"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className=" hover:text-primary transition-colors"
                 >
                   Shop
                 </Link>
@@ -40,15 +40,23 @@ const Footer = () => {
               <li>
                 <Link
                   href="/about"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className=" hover:text-primary transition-colors"
                 >
                   About Us
                 </Link>
               </li>
               <li>
                 <Link
+                  href="/admin"
+                  className=" hover:text-primary transition-colors"
+                >
+                  Admin
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contact"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className=" hover:text-primary transition-colors"
                 >
                   Contact
                 </Link>

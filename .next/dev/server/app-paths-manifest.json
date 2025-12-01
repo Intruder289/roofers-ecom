@@ -1,7 +1,10 @@
 {
+  "/(public)/auth/page": "app/(public)/auth/page.js",
+  "/(public)/cart/page": "app/(public)/cart/page.js",
+  "/(public)/checkout/page": "app/(public)/checkout/page.js",
+  "/(public)/page": "app/(public)/page.js",
+  "/(public)/product/[id]/page": "app/(public)/product/[id]/page.js",
+  "/(public)/shop/page": "app/(public)/shop/page.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/api/product/route": "app/api/product/route.js",
-  "/page": "app/page.js",
-  "/product/[id]/page": "app/product/[id]/page.js",
-  "/shop/page": "app/shop/page.js"
+  "/api/product/route": "app/api/product/route.js"
 }

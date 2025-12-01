@@ -14,6 +14,8 @@
 # testing
 /coverage
 
+/public/invoices
+
 # next.js
 /out/
 /.next

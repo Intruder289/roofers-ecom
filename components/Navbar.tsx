@@ -1,15 +1,23 @@
 "use client";
-import  Link  from "next/link";
-import Image from "next/image"
-import { ShoppingCart, Menu, X, Moon, Sun, CircleUser, Circle } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import {
+  ShoppingCart,
+  Menu,
+  X,
+  Moon,
+  Sun,
+  CircleUser,
+  Circle,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import  MiniCart from "@/components/MiniCart"
+import MiniCart from "@/components/MiniCart";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useState, useEffect } from "react";
 import { useCart } from "@/contexts/CartContext";
+import { signOut } from "@/lib/actions/auth-actions";
 
-
-const Navbar = () => {
+const Navbar = ({ session }: any) => {
   const { theme, toggleTheme } = useTheme();
   const { getCartCount } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,12 +27,21 @@ const Navbar = () => {
     setMounted(true);
   }, []);
 
-  const navLinks = [
+  let navLinks = [
     { name: "Home", path: "/" },
     { name: "Shop", path: "/shop" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
+    { name: "Login", path: "/auth" },
   ];
+  if (session) {
+    navLinks = [
+      { name: "Home", path: "/" },
+      { name: "Shop", path: "/shop" },
+      { name: "About", path: "/about" },
+      { name: "Contact", path: "/contact" },
+    ];
+  }
 
   return (
     <nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
@@ -32,10 +49,10 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="text-2xl font-bold text-primary">
-            <Image 
-              src={theme === 'dark' ? '/dark-logo.png' : '/logo.png'} 
-              width={120} 
-              height={120} 
+            <Image
+              src={theme === "dark" ? "/dark-logo.png" : "/logo.png"}
+              width={120}
+              height={120}
               alt="logo"
             />
           </Link>
@@ -46,26 +63,34 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 href={link.path}
-                className="text-foreground hover:text-primary transition-colors font-medium"
+                className="text-foreground hover:text-primary transition-colors font-medium cursor-pointer"
               >
                 {link.name}
               </Link>
             ))}
+            {session && (<Button variant="secondary" className="cursor-pointer" onClick={()=> signOut()}>Logout</Button>)}
           </div>
 
           {/* Actions */}
           <div className="flex items-center space-x-4">
-
             {/* <Link href="/cart"> */}
-            <Link href="#">
-              <Button variant="ghost" size="icon" className="relative hover:bg-[#ffb703] hover:text-[#0a0a0a]">
-                <MiniCart/>
+            <Link href="/cart">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="relative hover:bg-[#ffb703] hover:text-[#0a0a0a]"
+              >
+                <MiniCart />
               </Button>
             </Link>
 
             {/* account button */}
-            <Link href="#">
-              <Button variant="ghost" size="icon" className="relative hover:bg-[#ffb703] hover:text-[#0a0a0a]">
+            <Link href="/account">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="relative hover:bg-[#ffb703] hover:text-[#0a0a0a]"
+              >
                 <CircleUser className="h-5 w-5" />
               </Button>
             </Link>

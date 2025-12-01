@@ -1,5 +1,86 @@
 {
-  "node": {},
+  "node": {
+    "7fb31e7808e3e043d84e1fd3738cd2c7b2204f4136": {
+      "workers": {
+        "app/(public)/auth/page": {
+          "moduleId": "[project]/.next-internal/server/app/(public)/auth/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/auth-actions.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "signOut",
+          "filename": "lib/actions/auth-actions.tsx"
+        },
+        "app/(public)/cart/page": {
+          "moduleId": "[project]/.next-internal/server/app/(public)/cart/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/auth-actions.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "signOut",
+          "filename": "lib/actions/auth-actions.tsx"
+        },
+        "app/(public)/checkout/page": {
+          "moduleId": "[project]/.next-internal/server/app/(public)/checkout/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/auth-actions.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "signOut",
+          "filename": "lib/actions/auth-actions.tsx"
+        },
+        "app/(public)/page": {
+          "moduleId": "[project]/.next-internal/server/app/(public)/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/auth-actions.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "signOut",
+          "filename": "lib/actions/auth-actions.tsx"
+        },
+        "app/(public)/product/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/(public)/product/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/auth-actions.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "signOut",
+          "filename": "lib/actions/auth-actions.tsx"
+        },
+        "app/(public)/shop/page": {
+          "moduleId": "[project]/.next-internal/server/app/(public)/shop/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/auth-actions.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "signOut",
+          "filename": "lib/actions/auth-actions.tsx"
+        }
+      },
+      "layer": {
+        "app/(public)/auth/page": "action-browser",
+        "app/(public)/cart/page": "action-browser",
+        "app/(public)/checkout/page": "action-browser",
+        "app/(public)/page": "action-browser",
+        "app/(public)/product/[id]/page": "action-browser",
+        "app/(public)/shop/page": "action-browser"
+      },
+      "filename": "lib/actions/auth-actions.tsx",
+      "exportedName": "signOut"
+    },
+    "7f8cacf259474c3e0261e06b59d646a88f25062099": {
+      "workers": {
+        "app/(public)/auth/page": {
+          "moduleId": "[project]/.next-internal/server/app/(public)/auth/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/auth-actions.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "signIn",
+          "filename": "lib/actions/auth-actions.tsx"
+        }
+      },
+      "layer": {
+        "app/(public)/auth/page": "action-browser"
+      },
+      "filename": "lib/actions/auth-actions.tsx",
+      "exportedName": "signIn"
+    },
+    "7fd0862c9ccb4898ebcfa395ea084080246184acb2": {
+      "workers": {
+        "app/(public)/auth/page": {
+          "moduleId": "[project]/.next-internal/server/app/(public)/auth/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/auth-actions.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "signUp",
+          "filename": "lib/actions/auth-actions.tsx"
+        }
+      },
+      "layer": {
+        "app/(public)/auth/page": "action-browser"
+      },
+      "filename": "lib/actions/auth-actions.tsx",
+      "exportedName": "signUp"
+    }
+  },
   "edge": {},
   "encryptionKey": "jTCeEaeyAAfhBQLzIFyaqjIniF5ShrO/Y0BNF/Qvl5k="
 }

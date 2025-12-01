@@ -5,14 +5,16 @@ import { toast } from "@/hooks/use-toast";
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [cart, setCart] = useState<CartItem[]>(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       try {
         const savedCart = localStorage.getItem("cart");
         return savedCart ? JSON.parse(savedCart) : [];
       } catch (error) {
-        console.error('Failed to parse cart from localStorage:', error);
+        console.error("Failed to parse cart from localStorage:", error);
         return [];
       }
     }
@@ -20,29 +22,48 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   });
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       try {
         localStorage.setItem("cart", JSON.stringify(cart));
       } catch (error) {
-        console.error('Failed to save cart to localStorage:', error);
+        console.error("Failed to save cart to localStorage:", error);
       }
     }
   }, [cart]);
 
-  const addToCart = (product: Product) => {
-    setCart((currentCart) => {
-      const existingItem = currentCart.find((item) => item.id === product.id);
+  const addToCart = (product: Product | { product: Product }) => {
+    setCart((currentCart: CartItem[]) => {
+      // Extract the actual product if it's nested
+      const actualProduct = 'product' in product ? product.product : product;
+      
+      // Check if the product is already in the cart
+      const existingItem = currentCart.find(
+        (item) => item.product.id === actualProduct.id
+      );
+
       if (existingItem) {
         return currentCart.map((item) =>
-          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+          item.product.id === actualProduct.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
         );
       }
-      return [...currentCart, { ...product, quantity: 1 }];
+
+      // Add new item to cart with proper structure
+      return [
+        ...currentCart,
+        {
+          product: actualProduct,
+          quantity: 1,
+        },
+      ] as CartItem[];
     });
   };
 
   const removeFromCart = (productId: string) => {
-    setCart((currentCart) => currentCart.filter((item) => item.id !== productId));
+    setCart((currentCart) =>
+      currentCart.filter((item) => item.product.id !== productId)
+    );
   };
 
   const updateQuantity = (productId: string, quantity: number) => {
@@ -51,7 +72,9 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       return;
     }
     setCart((currentCart) =>
-      currentCart.map((item) => (item.id === productId ? { ...item, quantity } : item))
+      currentCart.map((item) =>
+        item.product.id === productId ? { ...item, quantity } : item
+      )
     );
   };
 
@@ -64,7 +87,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const getCartTotal = () => {
-    return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+    return cart.reduce((total, item) => total + item.product.price * item.quantity, 0);
   };
 
   const getCartCount = () => {

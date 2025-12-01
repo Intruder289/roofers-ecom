@@ -59,7 +59,9 @@ var __TURBOPACK__imported__module__$5b$externals$5d2f40$prisma$2f$client__$5b$ex
 const globalForPrisma = /*TURBOPACK member replacement*/ __turbopack_context__.g;
 const prisma = globalForPrisma.prisma || new __TURBOPACK__imported__module__$5b$externals$5d2f40$prisma$2f$client__$5b$external$5d$__$2840$prisma$2f$client$2c$__cjs$29$__["PrismaClient"]({
     log: [
-        "query"
+        "query",
+        "error",
+        "warn"
     ]
 });
 if ("TURBOPACK compile-time truthy", 1) globalForPrisma.prisma = prisma;
@@ -80,7 +82,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app
 async function POST(req) {
     try {
         const body = await req.json();
-        const { name, price, description, image, inStock, featured, category } = body;
+        let { name, price, description, image, inStock, featured, category } = body;
         if (!name || price === undefined || !description || !image) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 error: "Missing required fields"
@@ -88,6 +90,8 @@ async function POST(req) {
                 status: 400
             });
         }
+        // ✅ Convert string price to integer
+        price = parseInt(price, 10);
         const product = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].product.create({
             data: {
                 price,
@@ -118,9 +122,9 @@ async function GET() {
         });
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json(products);
     } catch (error) {
-        console.error('Error fetching products:', error);
+        console.error("Error fetching products:", error);
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            error: 'Failed to fetch products'
+            error: "Failed to fetch products"
         }, {
             status: 500
         });

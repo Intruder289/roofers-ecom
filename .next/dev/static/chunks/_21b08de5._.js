@@ -18,12 +18,10 @@ const ThemeContext = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$projec
 const ThemeProvider = ({ children })=>{
     _s();
     const [theme, setTheme] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("light");
+    // Set light theme by default
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "ThemeProvider.useEffect": ()=>{
-            const savedTheme = localStorage.getItem("theme");
-            if (savedTheme) {
-                setTheme(savedTheme);
-            }
+            setTheme("light");
         }
     }["ThemeProvider.useEffect"], []);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
@@ -49,7 +47,7 @@ const ThemeProvider = ({ children })=>{
         children: children
     }, void 0, false, {
         fileName: "[project]/contexts/ThemeContext.tsx",
-        lineNumber: 37,
+        lineNumber: 35,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

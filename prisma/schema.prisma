@@ -14,7 +14,7 @@ datasource db {
 }
 
 model User {
-  id            String    @id
+  id            String    @id             @default(uuid())
   name          String
   email         String
   emailVerified Boolean   @default(false)
@@ -74,7 +74,7 @@ model Verification {
 }
 
 model Product {
-  id          String   @id
+  id          String   @id             @default(uuid())
   name        String
   price       Int
   description String
@@ -86,4 +86,19 @@ model Product {
   updatedAt   DateTime @default(now()) @updatedAt
 
   @@map("product")
+}
+
+model Invoice {
+  id            String   @id @default(cuid())
+  invoiceNumber String   @unique
+  customerName  String
+  customerEmail String
+  customerAddress String
+  items         Json
+  totalAmount   Float
+  status        String   @default("UNPAID")
+  pdfUrl        String?  // optional: where the generated PDF is stored
+  createdAt     DateTime @default(now())
+
+  @@map("invoice")
 }

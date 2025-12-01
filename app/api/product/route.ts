@@ -4,11 +4,14 @@ import { prisma } from '@/lib/prisma'
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, price, description, image, inStock, featured, category } = body;
+    let { name, price, description, image, inStock, featured, category } = body;
 
     if (!name || price === undefined || !description || !image) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
+
+    // ✅ Convert string price to integer
+    price = parseInt(price, 10);
 
     const product = await prisma.product.create({
       data:{
@@ -32,17 +35,15 @@ export async function POST(req: Request) {
   }
 }
 
+// Get all products
 export async function GET() {
   try {
-    const products = await prisma.product.findMany({ 
-      orderBy: { createdAt: "desc" } 
+    const products = await prisma.product.findMany({
+      orderBy: { createdAt: "desc" },
     });
     return NextResponse.json(products);
   } catch (error) {
-    console.error('Error fetching products:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch products' },
-      { status: 500 }
-    );
+    console.error("Error fetching products:", error);
+    return NextResponse.json({ error: "Failed to fetch products" }, { status: 500 });
   }
 }
